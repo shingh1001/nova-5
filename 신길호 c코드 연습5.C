@@ -1,45 +1,39 @@
 #include <stdio.h>
 
+void print_star1() {
+      for(int x=0; x<10; x++)
+            printf("*");
+}
+
+void print_star2(int b) {
+      for(int l=0; l<b; l++) {
+            for(int q=0; q<10; q++)
+                  printf("*");
+                  printf("\n");
+      }
+}
+
+void print_stars3 (int m, int n) {
+      for(int k=0; k<n; k++) {
+            for(int v=0; v<m; v++)
+                  printf("*");
+            printf("\n");
+      }
+}
+
 int main(void) {
 
-int k,s,z,x;
-  
-printf("시간을 입력:");
-scanf("%d",&k);
-printf("분을 입력:");
-scanf("%d", &s);
-printf("입력한 시간: %d시 %d분 입니다\n", k,s);
+int m,n,b;
 
-z = s-45;
+print_star1();
+printf("\n");
+printf("별 10를 몇줄?");
+scanf("%d", &b);
 
-  if(z<0) {
-  k = k - 1 ;
-  z = 60 + z ;
-    if(k<12) 
-      printf("오전%d시 %d분 입니다\n", k,z);
-    
-    else if(k>=12)
-      k = k-12;
-      printf("오후%d시 %d분 입니다\n", k,z);
-  }
+print_star2(b);
+printf("별 몇 개를 몇 줄?");
+scanf("%d %d",&m, &n);
 
-  else if(z>0) {
-    if(k<12) 
-      printf("오전%d시 %d분 입니다\n", k,z);
-
-    else if(k>=12)
-      k = k-12;
-      printf("오후%d시 %d분 입니다\n", k,z);
-  }
-  
-  else if (z == 0) {
-    if(k<12) 
-      printf("오전%d시 %d분 입니다\n", k,z);
-  
-  else if(k>=12)
-      k = k-12;
-      printf("오후%d시 %d분 입니다\n", k,z);
-    }
-  
-  return 0;
+print_stars3(m,n);
+printf("별 총개수는: %d", m*n);
 }
